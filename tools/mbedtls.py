@@ -13,7 +13,9 @@ def build_library(env):
         "ENABLE_TESTING": 0,
         "ENABLE_PROGRAMS": 0,
         "CMAKE_INSTALL_PREFIX": env.Dir(mbedtls_bin).abspath,
+        "CMAKE_INSTALL_LIBDIR": "lib",
         "CMAKE_C_FLAGS": c_flags,
+        "MBEDTLS_FATAL_WARNINGS": 0,
     }
     lib_ext = ".lib" if is_msvc else ".a"
     lib_prefix = "" if is_msvc else "lib"
